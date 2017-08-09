@@ -1,0 +1,172 @@
+﻿<Window x:Class="ModularCalculator.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ModularCalculator.Views"
+        xmlns:vm="clr-namespace:ModularCalculator.ViewModels"
+        mc:Ignorable="d"
+        Title="ModularCalculator" Height="450" Width="300">
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <!--Top-->
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--Previous expression-->
+            <ScrollViewer
+                VerticalScrollBarVisibility="Disabled"
+                HorizontalScrollBarVisibility="Auto">
+                <TextBlock VerticalAlignment="Bottom" 
+                           TextAlignment="Right"
+                           Text="{Binding PreviousExpression}"
+                           Foreground="DarkGray"/>
+            </ScrollViewer>
+            
+            <!--Current expression-->
+            <Viewbox 
+                Grid.Row="1" 
+                HorizontalAlignment="Right">
+                <TextBlock Text="{Binding CurrentExpression}"/>
+            </Viewbox>
+        </Grid>
+
+        <!--Bottom-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!--Mods-->
+            <ScrollViewer Grid.ColumnSpan="4" 
+                          VerticalScrollBarVisibility="Disabled"
+                          HorizontalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding Modules}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button
+                                    Width="58"
+                                    Content="{Binding Content}"
+                                    Command="{Binding Command}"
+                                    />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel CanHorizontallyScroll="True"
+                                        Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </ScrollViewer>
+            <!--Clear and remove-->
+            <Button Grid.Row="1" Grid.Column="0"
+                    Command="{Binding ClearCurrentExpressionCommand}"
+                    Content="CE"/>
+            <Button Grid.Row="1" Grid.Column="1"
+                    Command="{Binding ClearBothExpressionsCommand}"
+                    Content="C"/>
+            <Button Grid.Row="1" Grid.Column="2"
+                    Command="{Binding DeleteLastInCurrentExpressionCommand}"
+                    Content="CL"/>
+            <!--Mathematical actions-->
+            <Button Grid.Row="1" Grid.Column="3"
+                    Command="{Binding ApplyMathematicalActionCommand}"
+                    CommandParameter="/"
+                    Content="/"/>
+            <Button Grid.Row="2" Grid.Column="3"
+                    Command="{Binding ApplyMathematicalActionCommand}"
+                    CommandParameter="*"
+                    Content="*"/>
+            <Button Grid.Row="3" Grid.Column="3"
+                    Command="{Binding ApplyMathematicalActionCommand}"
+                    CommandParameter="-"
+                    Content="-"/>
+            <Button Grid.Row="4" Grid.Column="3"
+                    Command="{Binding ApplyMathematicalActionCommand}"
+                    CommandParameter="+"
+                    Content="+"/>
+            <!--Evaluate action-->
+            <Button Grid.Row="5" Grid.Column="3"
+                    Command="{Binding EvaluateCommand}"
+                    Content="="/>
+            <!--Numerics-->
+            <Button Grid.Row="2" Grid.Column="0"
+                    Command="{Binding PushBackCurrentExpressionCommand}"
+                    CommandParameter="7"
+                    Content="7"/>
+            <Button Grid.Row="2" Grid.Column="1"
+                    Command="{Binding PushBackCurrentExpressionCommand}"
+                    CommandParameter="8"
+                    Content="8"/>
+            <Button Grid.Row="2" Grid.Column="2"
+                    Command="{Binding PushBackCurrentExpressionCommand}"
+                    CommandParameter="9"
+                    Content="9"/>
+
+            <Button Grid.Row="3" Grid.Column="0"
+                    Command="{Binding PushBackCurrentExpressionCommand}"
+                    CommandParameter="4"
+                    Content="4"/>
+            <Button Grid.Row="3" Grid.Column="1"
+                    Command="{Binding PushBackCurrentExpressionCommand}"
+                    CommandParameter="5"
+                    Content="5"/>
+            <Button Grid.Row="3" Grid.Column="2"
+                    Command="{Binding PushBackCurrentExpressionCommand}"
+                    CommandParameter="6"
+                    Content="6"/>
+
+            <Button Grid.Row="4" Grid.Column="0"
+                    Command="{Binding PushBackCurrentExpressionCommand}"
+                    CommandParameter="1"
+                    Content="1"/>
+            <Button Grid.Row="4" Grid.Column="1"
+                    Command="{Binding PushBackCurrentExpressionCommand}"
+                    CommandParameter="2"
+                    Content="2"/>
+            <Button Grid.Row="4" Grid.Column="2"
+                    Command="{Binding PushBackCurrentExpressionCommand}"
+                    CommandParameter="3"
+                    Content="3"/>
+
+            <Button Grid.Row="5" Grid.Column="0"
+                    Command="{Binding ReverseMathematicalSignCommand}"
+                    Content="+/-"/>
+            <Button Grid.Row="5" Grid.Column="1"
+                    Command="{Binding PushBackCurrentExpressionCommand}"
+                    CommandParameter="0"
+                    Content="0"/>
+            <Button Grid.Row="5" Grid.Column="2"
+                    Command="{Binding PushBackCurrentExpressionCommand}"
+                    CommandParameter="."
+                    Content=","/>
+        </Grid>
+    </Grid>
+</Window>
