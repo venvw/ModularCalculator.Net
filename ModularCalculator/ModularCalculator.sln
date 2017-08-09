@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularCalculator", "Modula
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularCalculator.Core", "ModularCalculator.Core\ModularCalculator.Core.csproj", "{F67F0B20-3C65-4E64-8BE9-3514ECC7BE7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleModsLibrary", "SampleModsLibrary\SampleModsLibrary.csproj", "{200FC468-CC65-4150-9EE3-189F89656B36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F67F0B20-3C65-4E64-8BE9-3514ECC7BE7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F67F0B20-3C65-4E64-8BE9-3514ECC7BE7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F67F0B20-3C65-4E64-8BE9-3514ECC7BE7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{200FC468-CC65-4150-9EE3-189F89656B36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{200FC468-CC65-4150-9EE3-189F89656B36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{200FC468-CC65-4150-9EE3-189F89656B36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{200FC468-CC65-4150-9EE3-189F89656B36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

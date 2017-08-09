@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ModularCalculator.Models
 {
@@ -18,7 +19,17 @@ namespace ModularCalculator.Models
         }
 
         public string Content => module.Content;
-        public DelegateCommand Command => new DelegateCommand(() => module.OnClick());
+        public DelegateCommand Command => new DelegateCommand(() =>
+        {
+            try
+            {
+                module.OnClick();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show($"{e.Message}", $"Error occured in {module}");
+            }
+        });
 
         public static ModuleAdapter FromModule(IModule module)
         {

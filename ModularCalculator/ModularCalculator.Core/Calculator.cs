@@ -131,7 +131,14 @@ namespace ModularCalculator.Core
 
         public static string EvaluateThroughNCalcOnlyResult(string expression)
         {
-            return new NCalc.Expression(expression).Evaluate().ToString().Replace(',', '.');
+            try
+            {
+                return new NCalc.Expression(expression).Evaluate().ToString().Replace(',', '.');
+            }
+            catch
+            {
+                return "ERROR";
+            }
         }
     }
 }
