@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace ModularCalculator.Models
 {
-    public class ModuleAdapter
+    internal class ModuleAdapter
     {
         private IModule module;
 
@@ -27,7 +27,7 @@ namespace ModularCalculator.Models
             }
             catch(Exception e)
             {
-                MessageBox.Show($"{e.Message}", $"Error occured in {module}");
+                MessageBox.Show($"{e.Message}", $"Error occurred in {module}.OnClick()");
             }
         });
 

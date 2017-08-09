@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DevExpress.Mvvm;
-
 using ModularCalculator.Core;
 using System.Collections.ObjectModel;
 using ModularCalculator.Models;

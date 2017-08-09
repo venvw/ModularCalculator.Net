@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SampleModsLibrary
 {
+    //Module which causes an error
     public class InvalidModule : IModule
     {
         public string Content => "Invalid Module";
