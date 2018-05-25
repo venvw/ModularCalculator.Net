@@ -1,11 +1,7 @@
-﻿using DevExpress.Mvvm;
-using ModularCalculator.Core.Modules;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows;
+using DevExpress.Mvvm;
+using ModularCalculator.Core.Modules;
 
 namespace ModularCalculator.Models
 {

@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DevExpress.Mvvm;
-using ModularCalculator.Core;
-using System.Collections.ObjectModel;
-using ModularCalculator.Models;
-using ModularCalculator.Core.Modules;
 using System.IO;
 using System.Reflection;
+using System.Collections.ObjectModel;
+using DevExpress.Mvvm;
+using ModularCalculator.Core;
+using ModularCalculator.Models;
+using ModularCalculator.Core.Modules;
 
 namespace ModularCalculator.ViewModels
 {
